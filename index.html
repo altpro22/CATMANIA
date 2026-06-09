@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0" />
+    
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://altpro22.github.io/Jean-Luis-David/" />
+    <meta property="og:title" content="CATmania Sailing Trips | Magazine Edition" />
+    <meta property="og:description" content="Descubre la aventura en el Caribe Mexicano. Reserva tu experiencia exclusiva en catamarán con CATmania." />
+    
+    <meta property="og:image" content="https://altpro22.github.io/Jean-Luis-David/assets/brand/og_catmania.jpg?v=1.1" />
+    <meta property="og:image:secure_url" content="https://altpro22.github.io/Jean-Luis-David/assets/brand/og_catmania.jpg?v=1.1" />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:width" content="1080" />
+    <meta property="og:image:height" content="1920" />
+
+    <title>CATmania Sailing Trips | CONECTA CARD</title>
+    
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800;900&family=Bebas+Neue&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <button id="btn-audio-control" class="audio-toggle" onclick="toggleAudioGlobal()">
+        <i id="audio-icon" class="fas fa-volume-up"></i>
+    </button>
+
+    <section id="portada-hub" class="main-hub">
+        <header class="magazine-header">
+            <div class="header-title-container">
+                <h1 class="agency-name">CATmania Sailing Trips</h1>
+                <div class="download-track-container">
+                    <p class="download-text">Download our audio spot</p>
+                    <a href="assets/sounds/spot-intro.mp3" download="spot-intro.mp3" class="btn-download-audio" onclick="playClickSound()">
+                        <i class="fas fa-download"></i> DOWNLOAD
+                    </a>
+                </div>
+            </div>
+            <img src="assets/brand/logo-mini.png" alt="Logo" class="agency-logo">
+        </header>
+
+        <div class="mosaic-grid">
+            <div class="mosaic-item hero-block" onclick="openProfileZoom()">
+                <img id="profile-pic-img" src="assets/hero/main-photo.jpg" alt="CATmania Sailing Experience">
+                <div class="hero-overlay">
+                    <span class="edition-label">CONECTA CARD</span>
+                    <h2 class="hero-title">CATmania Sailing Trips</h2>
+                </div>
+            </div>
+
+            <div class="mosaic-item menu-block">
+                <div class="magazine-menu-grid">
+                    <button class="mag-btn" onclick="showAppContent('cat1')">
+                        <span class="num">01</span> ABOUT US
+                    </button>
+                    <button class="mag-btn" onclick="showAppContent('cat2')">
+                        <span class="num">02</span> SERVICES
+                    </button>
+                    <button class="mag-btn" onclick="showAppContent('cat3')">
+                        <span class="num">03</span> HAPPY VOYAGERS
+                    </button>
+                    <button class="mag-btn" onclick="showAppContent('cat4')">
+                        <span class="num">04</span> CONTACT
+                    </button>
+                </div>
+            </div>
+
+            <div class="mosaic-item video-block" onclick="openYouTubeVideo()">
+                <div class="video-preview" id="yt-iframe-container">
+                    <img src="assets/hero/video-thumb.jpg" alt="CATmania Video Preview" id="yt-thumb-img">
+                    <div class="yt-play-mini" id="yt-play-icon"><i class="fab fa-youtube"></i></div>
+                </div>
+                <span class="block-label">CLICK TO PLAY</span>
+            </div>
+
+            <div class="mosaic-item lead-block">
+                <a href="https://catmaniamx.com/tours/private-charters/" target="_blank" class="btn-shiny-gold shine-effect" style="text-decoration: none; display: block; text-align: center; padding: 15px; font-weight: bold; border-radius: 5px;">
+                    BOOK NOW
+                </a>
+            </div>
+
+            <div class="mosaic-item share-block">
+                <button class="btn-magazine-share" onclick="shareExperienceRobust()">
+                    <i class="fas fa-share-alt"></i> RECOMMEND US AND SHARE
+                </button>
+            </div>
+
+            <div class="mosaic-item viral-gamification-block">
+                <div class="viral-card-container">
+                    <h4 class="viral-title">Share the adventure and earn VIP access</h4>
+                    <div id="viral-lock-overlay" class="viral-locked">
+                        <i class="fas fa-lock"></i>
+                        <span id="viral-counter-label">COMPARTIDOS / SHARED: 0 / 5</span>
+                    </div>
+                    <button class="btn-viral-share" onclick="executeViralShare()">
+                        <i class="fab fa-whatsapp"></i> SHARE TO UNLOCK
+                    </button>
+                </div>
+            </div>
+            
+            <div class="mosaic-item custom-actions-block">
+                <button class="btn-custom-action btn-recommended-businesses" onclick="openBrandModal('modal-negocios')">
+                    EXPLORE BEYOND THE SEA
+                </button>
+                <button class="btn-custom-action btn-vip-promotions" onclick="openBrandModal('modal-promociones')">
+                    VIP EXCLUSIVE OFFERS
+                </button>
+                
+                <div class="credits-altpro-compact">
+                    <span class="produced-by">PRODUCED BY CONECTA CARD</span>
+                    <a href="https://wa.me/524491472336" target="_blank" class="altpro-link">
+                        <i class="fab fa-whatsapp"></i> 449 147 2336
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modales -->
+    <div id="modal-negocios" class="overlay-modal brand-custom-modal" style="display: none;" onclick="closeBrandModal('modal-negocios')">
+        <button class="btn-close-circular" onclick="closeBrandModal('modal-negocios')">×</button>
+        <div class="network-scroll-box" onclick="event.stopPropagation()">
+            <h3 class="network-modal-title"><i class="fas fa-umbrella-beach"></i> EXPLORE CANCUN</h3>
+            <p class="network-modal-subtitle">Discover the magic of the Caribbean and enjoy an unforgettable experience with us.</p>
+            <div class="network-buttons-grid">
+                <button class="btn-network-link" onclick="openNetworkCard('https://www.youtube.com/shorts/Y4b-rfoxW0I')"><i class="fas fa-ship"></i> VISIT CANCUN</button>
+                <button class="btn-network-link" onclick="openNetworkCard('https://www.youtube.com/shorts/II2AQD6uZHo')"><i class="fas fa-landmark"></i> A BIT OF HISTORY</button>
+                <button class="btn-network-link" onclick="openNetworkCard('https://www.youtube.com/shorts/iHGcmzbO9Lc')"><i class="fas fa-moon"></i> NIGHTLIFE IN CANCUN</button>
+                <button class="btn-network-link" onclick="openNetworkCard('https://www.youtube.com/shorts/rbKTx6ycb94')"><i class="fas fa-video"></i> THIS IS CANCUN</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-promociones" class="overlay-modal brand-custom-modal" style="display: none;" onclick="closeBrandModal('modal-promociones')">
+        <button class="btn-close-circular" onclick="closeBrandModal('modal-promociones')">×</button>
+        <div class="network-scroll-box" onclick="event.stopPropagation()">
+            <h3 class="network-modal-title"><i class="fas fa-gem"></i> VIP EXCLUSIVE OFFERS</h3>
+            <p class="network-modal-subtitle">Unlock benefits on our network by sharing the CARD</p>
+            <div class="tier-accordion-container">
+                <div class="tier-card-box">
+                    <div class="tier-header-bar">
+                        <span class="tier-badge"><i class="fas fa-users"></i> GOAL: 10 FRIENDS</span>
+                        <span class="tier-status-lock" id="status-lock-10"><i class="fas fa-lock"></i> LOCKED</span>
+                    </div>
+                    <div class="tier-content-benefits">
+                        <h4 class="benefit-item-headline">CATMANIA SAILING TRIPS</h4>
+                        <p class="benefit-item-desc">• 10% discount on any service</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-transaccional" class="overlay-modal business-form-overlay" style="display: none;">
+        <button class="btn-close-circular" onclick="closeTransactionModal()">×</button>
+        <div class="form-scroll-wrapper" onclick="event.stopPropagation()">
+            <div class="form-selector-tabs">
+                <button id="tab-citas" class="tab-selector-btn active" onclick="switchBusinessForm('citas')">BOOK NOW</button>
+                <button id="tab-cotizar" class="tab-selector-btn" onclick="switchBusinessForm('cotizar')">GET A QUOTE</button>
+            </div>
+            <form id="form-case-cotizar" class="business-dynamic-form" style="display:none;" onsubmit="enviarCotizacionWhatsApp(event)">
+                <h3 class="form-section-title">REQUEST A QUOTE</h3>
+                <div class="input-group-parallel"><label>Full Name *</label><input type="text" id="cotizar-nombre" required placeholder="Full Name"></div>
+                <div class="input-group-parallel"><label>WhatsApp *</label><input type="tel" id="cotizar-whatsapp" pattern="[0-9]{10}" required placeholder="10 digits"></div>
+                <div class="input-group-parallel"><label>Request Details *</label><textarea id="cotizar-detalles" rows="4" required placeholder="Specify tour date, number of people or special requests..."></textarea></div>
+                <button type="submit" style="width: 100%; margin-top: 20px; padding: 15px; background-color: #25d366; color: white; border: none; border-radius: 5px; font-weight: bold; cursor: pointer;">
+                    <i class="fab fa-whatsapp"></i> SEND REQUEST VIA WHATSAPP
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <main id="dynamic-content-layer" class="content-overlay" style="display: none;">
+        <button class="btn-close-circular" onclick="closeAppContent()">×</button>
+        <section class="tab-pane" id="cat1-pane" style="display: none;"><h2 class="pane-title"></h2><div id="grid-cat1" class="carousel-zigzag-grid"></div></section>
+        <section class="tab-pane" id="cat2-pane" style="display: none;"><h2 class="pane-title"></h2><div id="grid-cat2" class="carousel-zigzag-grid"></div></section>
+        <section class="tab-pane" id="cat3-pane" style="display: none;"><h2 class="pane-title"></h2><div id="grid-cat3" class="carousel-zigzag-grid"></div></section>
+        <section class="tab-pane" id="cat4-pane" style="display: none;">
+            <h2 class="pane-title">CONTACT</h2>
+            <div class="contact-panel-robust">
+                <p class="address-tag"><i class="fas fa-map-pin"></i> Marina Flamingos en Punta Sam Carr. Punta Sam Km. 4.5 Cancún, Q. Roo 77520</p>
+                <p class="address-tag"><i class="fas fa-phone"></i> +52 1 998 214 1767</p>
+                <div class="social-vertical-stack">
+                    <a id="link-web-direct" href="#" target="_blank" class="stack-btn web-color"><i class="fas fa-globe"></i> WEBSITE</a>
+                    <a id="link-wa-additional" href="#" target="_blank" class="stack-btn wa-add-color"><i class="fab fa-whatsapp"></i> WHATSAPP</a>
+                    <a id="link-fb-direct" href="#" target="_blank" class="stack-btn fb-color"><i class="fab fa-facebook"></i> FACEBOOK</a>
+                    <a id="link-maps-direct" href="#" target="_blank" class="stack-btn maps-color"><i class="fas fa-location-dot"></i> HOW TO GET THERE</a>
+                    <a href="https://www.tripadvisor.com/Attraction_Review-g23328775-d19375150-Reviews-Catmania_Catamarans-Costa_Mujeres_Yucatan_Peninsula.html" target="_blank" class="stack-btn mail-color"><i class="fab fa-tripadvisor"></i> TRIPADVISOR</a>
+                </div>
+                <div class="qr-reubicado-container">
+                    <h4 class="qr-section-heading">SCAN THE QR CODE</h4>
+                    <img src="assets/hero/qr.png" alt="QR Local" class="qr-embedded-img">
+                    <a href="assets/hero/qr.png" download="qr.png" class="btn-download-qr-integrated" onclick="playClickSound()">
+                        <i class="fas fa-cloud-download-alt"></i> SHARE THE QR CODE
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div id="lightbox" class="overlay-modal" style="display: none;" onclick="closeLightbox()">
+        <button class="btn-close-circular" onclick="closeLightbox()">×</button>
+        <div class="zoom-premium-content" onclick="event.stopPropagation()">
+            <button class="btn-nav-lightbox btn-prev" onclick="changeLightboxImage(-1)"><i class="fas fa-chevron-left"></i></button>
+            <div class="zoom-image-wrapper">
+                <img id="lightbox-image" src="" alt="Zoom">
+                <img src="assets/brand/logo-mini.png" class="mini-logo-zoom-overlay">
+            </div>
+            <button class="btn-nav-lightbox btn-next" onclick="changeLightboxImage(1)"><i class="fas fa-chevron-right"></i></button>
+        </div>
+    </div>
+
+    <div id="text-zoom-modal" class="overlay-modal" style="display: none;" onclick="closeTextZoom()">
+        <div class="text-zoom-card" onclick="event.stopPropagation()">
+            <button class="btn-close-circular" style="top:-20px; right:-20px;" onclick="closeTextZoom()">×</button>
+            <div class="card-branding-header" style="display: flex; align-items: center;">
+                <img src="assets/brand/logo-mini.png" class="card-logo" style="width: 40px; margin-right: 10px;">
+                <h3 id="text-zoom-title"></h3>
+            </div>
+            <hr class="gold-divider" style="border: 0; border-top: 1px solid #d4af37; margin: 15px 0;">
+            <div id="text-zoom-content" style="white-space: pre-line;"></div>
+        </div>
+    </div>
+
+    <audio id="spot-intro" src="assets/sounds/spot-intro.mp3" preload="auto" loop></audio>
+    <audio id="sndFxClick" src="assets/sounds/clic.mp3"></audio>
+    
+    <div id="video-lightbox-overlay" class="overlay-modal" style="display:none;" onclick="closeVideoLightbox()">
+        <button class="btn-close-circular" onclick="closeVideoLightbox()">×</button>
+        <div class="zoom-premium-content" onclick="event.stopPropagation()">
+            <div class="zoom-image-wrapper" style="width: 90%; max-width: 600px;">
+                <iframe id="video-lightbox-frame" style="width: 100%; aspect-ratio: 16/9; border: 3px solid var(--brand-accent); border-radius: 10px;" src="" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
