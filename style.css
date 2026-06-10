@@ -222,8 +222,9 @@ body { background-color: var(--bg-premium); font-family: 'Montserrat', sans-seri
     font-weight: bold; 
     color: white; 
     font-family: 'Montserrat', sans-serif;
+    position: relative; /* Nueva línea */
+    z-index: 10;        /* Nueva línea para que el botón esté "encima" de todo */
 }
-
 .whatsapp { background-color: #25d366; }
 .mail { background-color: #d44638; }
 .tours { background-color: #00334e; }
