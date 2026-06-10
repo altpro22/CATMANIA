@@ -344,3 +344,12 @@ async function enviarCotizacionWhatsApp(event) {
     playAcierto();
     alert("¡Solicitud enviada! En breve nos pondremos en contacto.");
 }
+
+// Funciones para el menú de contacto de la CONECTA CARD
+function abrirMenu() {
+    document.getElementById('miMenuContacto').style.display = 'flex';
+}
+
+function cerrarMenu() {
+    document.getElementById('miMenuContacto').style.display = 'none';
+}
